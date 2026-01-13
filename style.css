@@ -39,6 +39,14 @@ nav a {
     text-decoration: none;
 }
 
+nav a.side-menu-toggle {
+    cursor: pointer;
+}
+
+nav a.side-menu-toggle:hover {
+    text-decoration: underline;
+}
+
 .menu-toggle, .side-menu-toggle {
     background: none;
     border: none;
@@ -175,29 +183,19 @@ article h2 {
     position: relative;
 }
 
-.ecclesiastes-quote::before {
-    content: '"';
-    font-size: 4rem;
-    color: #adb5bd;
-    position: absolute;
-    top: -10px;
-    left: 15px;
-    font-family: Georgia, serif;
-}
-
 .ecclesiastes-quote h3 {
     margin-top: 0;
     margin-bottom: 15px;
     color: #495057;
     font-size: 1.2rem;
-    text-align: center;
+    text-align: right;
 }
 
 .ecclesiastes-quote p {
     margin: 10px 0;
     line-height: 1.8;
     color: #495057;
-    text-align: center;
+    text-align: right;
 }
 
 .ecclesiastes-quote em {
