@@ -16,6 +16,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    position: relative;
 }
 
 header h1 {
@@ -38,13 +39,116 @@ nav a {
     text-decoration: none;
 }
 
-.menu-toggle {
-    display: none;
+.menu-toggle, .side-menu-toggle {
     background: none;
     border: none;
     color: white;
     font-size: 24px;
     cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.menu-toggle:hover, .side-menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Side Menu Styles */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+.side-menu-header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side-menu-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.side-menu-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.side-menu-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.side-menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu-links li {
+    border-bottom: 1px solid #eee;
+}
+
+.side-menu-links a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    line-height: 1.4;
+}
+
+.side-menu-links a:hover {
+    background-color: #f8f9fa;
+}
+
+.side-menu-links a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.side-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.side-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 main {
